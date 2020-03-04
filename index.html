@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="img-src 'self' data:;default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="img-src 'self' data:;default-src 'self'; script-src 'self'">
+    <link rel="stylesheet" type="text/css" href="css/w3.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>Hello LabVIEW!</title>
+  </head>
+  <body>
+    <div id='connIndicator' class='connStatus w3-panel'>--</div>
+    <div id='serverTimeIndicator' class='w3-panel'>--</div>
+    <div class='w3-container w3-cell'>
+      <h2>Avaliable API from Server</h2>
+      <ul id='serverAPIs'></ul>
+    </div>
+
+    <div class='w3-container w3-cell'>
+      <h2>Enter command and data to labview server</h2>
+      <label>Command</label>
+      <input id='cmdInput' class='w3-input w3-border-bottom w3-border-blue'></input>
+      <label>Data</label>
+      <input id='textInput' class='w3-input w3-border-bottom w3-border-blue'></input>
+      <button id='showDataBtn' class='w3-button w3-border w3-green w3-margin-top'>Send</button>
+    </div>
+
+    <div class='serverDataContainer w3-container'>
+      <h2>Reply from Server</h2>
+      <div id='serverDataIndicator' class='dataDisplay w3-padding w3-border w3-border-blue'>--</div>
+      
+    </div>
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+  </body>
+</html>
